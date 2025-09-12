@@ -32,7 +32,15 @@ We provide two main directories:
 Moreover, two `.zip` archives are provided:  
 - one contains the lists of collections of cells up to rank 10,  
 - the other contains the lists of polyominoes up to rank 14.  
-These lists are already generated and stored in `.txt` format, ready to use with the Macaulay2 code.  
+These lists are already generated and stored in `.txt` format, ready to use with the Macaulay2 code.
+A collection is represented as a list `Q`, whose elements are the cells, each specified by its diagonal corners. For example:
+```
+      __
+   __|__|
+  |__|__|
+
+ ``` 
+is encoded as:  Q={{{1,1},{2,2}},{{2,1},{3,2}},{{2,2},{3,3}}} 
 
 ---------------------------------------------------------------------------------------------------
 
