@@ -34,3 +34,41 @@ Moreover, two `.zip` archives are provided:
 These lists are already generated and stored in `.txt` format, ready to use with the Macaulay2 code.  
 
 ---------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------
+ HOW TO USE
+---------------------------------------------------------------------------------------------------
+
+1. **Download the repository**  
+   - From GitHub, click on *Code* → *Download ZIP*.  
+   - Extract the `.zip` archive on your computer.  
+   - You will now have a local folder containing the subdirectories `macaulay2/` and `sage/`.
+
+2. **Prepare the data files**  
+   - Inside the main repository, you will also find two archives:  
+       * `Collections_of_cells_up_rank_10.zip`  
+       * `Polyominoes_up_rank_14.zip`  
+   - Extract these archives **into the `macaulay2/` directory**.  
+   - After extraction, the `.txt` files with the collections will be available in the same folder where `RookPol.m2` is located.
+
+3. **Run the code in Macaulay2**  
+   - Open a terminal and navigate to the `macaulay2/` directory;
+   - Start Macaulay2 and load the required package and script:  
+     ```
+     loadPackage "Graphs";
+     load "RookPol.m2";
+     ```
+
+4. **Test the conjectures**  
+   - Load a file containing a list of collections of cells, e.g.:
+     ```
+     L = value get("weak_polyplets_n4.txt");
+     TestConj(L);
+     ```
+   - This will test the conjectures for all collections in `L`.
+
+5. **Additional functionality**  
+   - The file `RookPol.m2` also contains several auxiliary functions that can be used independently
+
+---
+
