@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this software and datasets, please cite it as below."
 authors:
-    family-names: "Navarra"
+  - family-names: "Navarra"
     given-names: "Francesco"
     affiliation: "Sabancı University"
 title: "Collections of Cells, Binomial Ideals, and Switching Rook Polynomials"
