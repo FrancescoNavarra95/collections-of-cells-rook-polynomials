@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software and datasets, please cite it as below."
+authors:
+  - family-names: "Navarra"
+    given-names: "Francesco"
+    affiliation: "Sabancı University"
+title: "Collections of Cells, Binomial Ideals, and Switching Rook Polynomials"
+version: "1.0.0"
+doi: "10.5281/zenodo.17108920"
+date-released: 2025-09-12
+url: "https://github.com/FrancescoNavarra95/collections-of-cells-rook-polynomials"
+license: "MIT"
