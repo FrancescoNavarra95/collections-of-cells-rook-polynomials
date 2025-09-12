@@ -37,9 +37,9 @@ A collection of cells is encoded as a list Q, whose elements are the cells.
 Each cell is represented by its diagonal corners.  
 
 Example:  
-       __
-    __|__|
-   |__|__|
+        __
+     __|__|
+    |__|__|
 
 is encoded as:
 
