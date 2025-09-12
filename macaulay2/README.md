@@ -15,6 +15,12 @@ The code provides functions to:
 
 All functions are implemented in the general setting of collections of cells.  
 A collection is represented as a list `Q`, whose elements are the cells, each specified by its diagonal corners.  
+Example:
+     				          __
+  			             __|__|
+   		            |__|__|      
+
+   is encoded as:  Q={{{1,1},{2,2}},{{2,1},{3,2}},{{2,2},{3,3}}}
 
 ## Organization
 
