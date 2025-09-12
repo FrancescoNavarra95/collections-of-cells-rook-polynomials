@@ -2,13 +2,13 @@
  COLLECTIONS OF CELLS, BINOMIAL IDEALS, AND SWITCHING ROOK POLYNOMIALS
 ---------------------------------------------------------------------------------------------------
 
--- This project is devoted to testing the following conjectures:
+This project is devoted to testing the following conjectures:
 
---   1. The h-polynomial of the coordinate ring of a collection of cells Q 
---      coincides with the switching rook polynomial of Q.
+   1. The h-polynomial of the coordinate ring of a collection of cells Q 
+      coincides with the switching rook polynomial of Q.
 
---   2. The Castelnuovo–Mumford regularity of the coordinate ring of Q 
---      coincides with the rook number of Q.
+   2. The Castelnuovo–Mumford regularity of the coordinate ring of Q 
+      coincides with the rook number of Q.
 
 ---------------------------------------------------------------------------------------------------
  DIRECTORIES
@@ -32,21 +32,5 @@ Moreover, two `.zip` archives are provided:
 - one contains the lists of collections of cells up to rank 10,  
 - the other contains the lists of polyominoes up to rank 14.  
 These lists are already generated and stored in `.txt` format, ready to use with the Macaulay2 code.  
-
-A collection of cells is encoded as a list Q, whose elements are the cells.  
-Each cell is represented by its diagonal corners.  
-
-Example:  
-        __
-     __|__|
-    |__|__|
-
-is encoded as:
-
-    Q = {
-          {{1,1},{2,2}},
-          {{2,1},{3,2}},
-          {{2,2},{3,3}}
-        }
 
 ---------------------------------------------------------------------------------------------------
