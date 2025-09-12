@@ -1,9 +1,9 @@
 # Macaulay2 Code for Collections of Cells, Binomial Ideals, and Switching Rook Polynomials
 
-This folder contains Macaulay2 code for experimenting with the following conjectures concerning a collection of cells $Q$:
+This folder contains Macaulay2 code for experimenting with the following conjectures concerning a collection of cells Q:
 
-1. The $h$-polynomial of the coordinate ring of $Q$ coincides with the switching rook polynomial of $Q$.
-2. The Castelnuovo–Mumford regularity of the coordinate ring of $Q$ equals the rook number of $Q$.
+1. The $h$-polynomial of the coordinate ring of Q coincides with the switching rook polynomial of Q.
+2. The Castelnuovo–Mumford regularity of the coordinate ring of Q equals the rook number of Q.
 
 ## Features
 
