@@ -1,5 +1,6 @@
 ---------------------------------------------------------------------------------------------------
- COLLECTIONS OF CELLS, BINOMIAL IDEALS, AND SWITCHING ROOK POLYNOMIALS
+ COLLECTIONS OF CELLS, BINOMIAL IDEALS, AND SWITCHING ROOK POLYNOMIALS 
+[![DOI](https://zenodo.org/badge/1055459624.svg)](https://doi.org/10.5281/zenodo.17108919)
 ---------------------------------------------------------------------------------------------------
 
 This project is devoted to testing the following conjectures:
