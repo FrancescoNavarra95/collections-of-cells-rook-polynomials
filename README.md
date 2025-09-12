@@ -5,7 +5,7 @@
 
 This project is devoted to testing the following conjectures:
 
-   1. The h-polynomial of the coordinate ring of a collection of cells Q 
+   1. The $h$-polynomial of the coordinate ring of a collection of cells Q 
       coincides with the switching rook polynomial of Q.
 
    2. The Castelnuovo–Mumford regularity of the coordinate ring of Q 
