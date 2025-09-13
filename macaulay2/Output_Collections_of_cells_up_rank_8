@@ -1,0 +1,153 @@
+-- We report here the output of the computations for collections of cells supporting the conjecture.  
+-- These experiments can be executed on a standard machine.
+
+-- The computations were carried out on a Lenovo Ideapad Flex 5 14ITL05, equipped with an Intel® Core™ i5-1135G7 
+-- processor (11th Gen, 4 cores / 8 threads, 2.40 GHz base, up to 4.20 GHz turbo) and 8 GB DDR4 RAM at 3200 MHz.
+
+
+Macaulay2, version 1.22
+with packages: ConwayPolynomials, Elimination, IntegralClosure, InverseSystems, Isomorphism, LLLBases,
+               MinimalPrimes, OnlineLookup, PrimaryDecomposition, ReesAlgebra, Saturation, TangentCone
+
+i1 : loadPackage "Graphs";
+
+i2 : load "RookPol.m2";
+
+i3 : L = value get("weak_polyplets_n2.txt");
+
+i4 : time TestConj(L)
+Iteration 1 over 2
+Conjecture is ok
+     -- used 0.0123464 seconds
+
+i5 : L = value get("weak_polyplets_n3.txt");
+
+i6 : time TestConj(L)
+Iteration 1 over 5
+Conjecture is ok
+     -- used 0.0178835 seconds
+
+i7 : L = value get("weak_polyplets_n4.txt");
+
+i8 : time TestConj(L)
+Iteration 1 over 22
+Conjecture is ok
+     -- used 0.124278 seconds
+
+i9 : L = value get("weak_polyplets_n5.txt");
+
+i10 : time TestConj(L)
+Iteration 1 over 94
+Conjecture is ok
+     -- used 0.87848 seconds
+
+i11 : L = value get("weak_polyplets_n6.txt");
+
+i12 : time TestConj(L)
+Iteration 1 over 524
+Iteration 251 over 524
+Iteration 501 over 524
+Conjecture is ok
+     -- used 11.4896 seconds
+
+i13 : L = value get("weak_polyplets_n7.txt");
+
+i14 : time TestConj(L)
+Iteration 1 over 3031
+Iteration 251 over 3031
+Iteration 501 over 3031
+Iteration 751 over 3031
+Iteration 1001 over 3031
+Iteration 1251 over 3031
+Iteration 1501 over 3031
+Iteration 1751 over 3031
+Iteration 2001 over 3031
+Iteration 2251 over 3031
+Iteration 2501 over 3031
+Iteration 2751 over 3031
+Iteration 3001 over 3031
+Conjecture is ok
+     -- used 178.542 seconds
+
+i15 : L = value get("weak_polyplets_n8.txt");
+
+i16 : time TestConj(L)
+Iteration 1 over 18770
+Iteration 251 over 18770
+Iteration 501 over 18770
+Iteration 751 over 18770
+Iteration 1001 over 18770
+Iteration 1251 over 18770
+Iteration 1501 over 18770
+Iteration 1751 over 18770
+Iteration 2001 over 18770
+Iteration 2251 over 18770
+Iteration 2501 over 18770
+Iteration 2751 over 18770
+Iteration 3001 over 18770
+Iteration 3251 over 18770
+Iteration 3501 over 18770
+Iteration 3751 over 18770
+Iteration 4001 over 18770
+Iteration 4251 over 18770
+Iteration 4501 over 18770
+Iteration 4751 over 18770
+Iteration 5001 over 18770
+Iteration 5251 over 18770
+Iteration 5501 over 18770
+Iteration 5751 over 18770
+Iteration 6001 over 18770
+Iteration 6251 over 18770
+Iteration 6501 over 18770
+Iteration 6751 over 18770
+Iteration 7001 over 18770
+Iteration 7251 over 18770
+Iteration 7501 over 18770
+Iteration 7751 over 18770
+Iteration 8001 over 18770
+Iteration 8251 over 18770
+Iteration 8501 over 18770
+Iteration 8751 over 18770
+Iteration 9001 over 18770
+Iteration 9251 over 18770
+Iteration 9501 over 18770
+Iteration 9751 over 18770
+Iteration 10001 over 18770
+Iteration 10251 over 18770
+Iteration 10501 over 18770
+Iteration 10751 over 18770
+Iteration 11001 over 18770
+Iteration 11251 over 18770
+Iteration 11501 over 18770
+Iteration 11751 over 18770
+Iteration 12001 over 18770
+Iteration 12251 over 18770
+Iteration 12501 over 18770
+Iteration 12751 over 18770
+Iteration 13001 over 18770
+Iteration 13251 over 18770
+Iteration 13501 over 18770
+Iteration 13751 over 18770
+Iteration 14001 over 18770
+Iteration 14251 over 18770
+Iteration 14501 over 18770
+Iteration 14751 over 18770
+Iteration 15001 over 18770
+Iteration 15251 over 18770
+Iteration 15501 over 18770
+Iteration 15751 over 18770
+Iteration 16001 over 18770
+Iteration 16251 over 18770
+Iteration 16501 over 18770
+Iteration 16751 over 18770
+Iteration 17001 over 18770
+Iteration 17251 over 18770
+Iteration 17501 over 18770
+Iteration 17751 over 18770
+Iteration 18001 over 18770
+Iteration 18251 over 18770
+Iteration 18501 over 18770
+Iteration 18751 over 18770
+Conjecture is ok
+     -- used 2657.22 seconds
+
