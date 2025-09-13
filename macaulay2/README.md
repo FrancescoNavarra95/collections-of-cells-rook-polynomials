@@ -5,6 +5,13 @@ This folder contains Macaulay2 code for experimenting with the following conject
 1. The $h$-polynomial of the coordinate ring of Q coincides with the switching rook polynomial of Q.
 2. The Castelnuovo–Mumford regularity of the coordinate ring of Q equals the rook number of Q.
 
+Moreover, two `.zip` archives are provided:  
+- one contains the lists of collections of cells up to rank 10,  
+- the other contains the lists of polyominoes up to rank 14.
+
+Finally, two .txt files contain the output of the conjecture verification: for collections of cells up to rank 8 and for polyominoes up to rank 11.
+These computations can be reproduced on a standard machine and do not require High Performance Computers.
+
 ## Features
 
 The code provides functions to:
