@@ -1,4 +1,4 @@
--- We report here the output of the computations for collections of cells supporting the conjecture.  
+-- We report here the output of the computations for collections of cells up to rank 8. 
 -- These experiments can be executed on a standard machine.
 
 -- The computations were carried out on a Lenovo Ideapad Flex 5 14ITL05, equipped with an Intel® Core™ i5-1135G7 
