@@ -178,7 +178,6 @@ kRookConfigurations=(Q,k)->(
                 tag:=0;
                 while (tag==0 and t<jet) do(
                     if not(isNonAttackingRooks(Q#i,N#t,Q)) then tag=1 else t=t+1;
-                    --if isNonAttackingRooks(Q#i,N#t,Q) then t=t+1;   
                 );
                 if t==jet then( 
                     FF=sort(join(N,{Q#i}));         
