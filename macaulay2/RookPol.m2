@@ -140,7 +140,6 @@ isInnerInterval=(A,B,Q)->(
        return InnerInterval({a,b},{c,d},Q);
 );
 
-
 ---------------------------------------------------------------------------------------------------
 -- isNonAttackingRooks(A,B,Q)
 --
@@ -154,81 +153,56 @@ isNonAttackingRooks=(A,B,Q)->(
     return true;
 );
 
-                  
 ---------------------------------------------------------------------------------------------------
--- kRookConfigurations(Q,k)
+-- AllNonAttackingRookConfigurations(Q)
 --
--- Compute the set of non-attacking configurations of k rooks in Q.
--- Each configuration is represented as a set of cells.
+-- This function computes all possible non-attacking rook configurations 
+-- on a given collection of cells Q. Each configuration is represented 
+-- as a list of cells.
+--
+-- The output is organized as a list of lists, where each sublist contains
+-- all configurations of a given size:
+--   - The first sublist contains all configurations with 1 rook,
+--   - The second sublist contains all configurations with 2 rooks,
+--   - And so on, up to the maximum number of non-attacking rooks that can 
+--     be placed on Q (that is, the rook number of Q).
+-- This ordering by cardinality is convenient for computing the coefficients 
+-- of the switching rook polynomial and for determining the rook number of Q.
 ---------------------------------------------------------------------------------------------------
-kRookConfigurations=(Q,k)->(
-    if k==1 then return apply(Q, i -> {i});
-    Q=sort(Q);
-    conf={};
-    for i from 0 to #Q-1 do(
-        conf=join(conf,{{Q#i}});
-    );
-    jet=1;
-    while jet<k do(
-        out={};
-        for l from 0 to #conf-1 do(
-            N=conf#l;
-            for i from 0 to #Q-1 do (
-                t:=0;
-                tag:=0;
-                while (tag==0 and t<jet) do(
-                    if not(isNonAttackingRooks(Q#i,N#t,Q)) then tag=1 else t=t+1;
-                );
-                if t==jet then( 
-                    FF=sort(join(N,{Q#i}));         
-                    out=join(out,{FF});
-                    out=toList(set(out));
+AllNonAttackingRookConfigurations=(Q) -> (
+    Q = sort Q;
+    conf = apply(Q, i -> {i}); 
+    AllConf = {conf};
+    while true do (
+        out = {};
+        for N in conf do (
+            for c in Q do (
+                if all(N, n -> isNonAttackingRooks(c, n, Q)) then (
+                    FF = sort join(N, {c});
+                    out = join(out, {FF});
                 );
             );
-        );   
-        if out=={} then return {"the rook number is", jet};
-        if jet+1==k then return out;
-        jet=jet+1;
-        conf=out;   
+        );
+        out = toList set out; 
+        if #out == 0 then return AllConf;
+        AllConf = append(AllConf, out);
+        conf = out;
     );
-);                        
+);
 
 ---------------------------------------------------------------------------------------------------
 -- RookNumber(Q)
 --
 -- Compute the rook number of a collection of cells Q, i.e., the maximum number 
--- of non-attacking rooks that can be placed in Q.
+-- of non-attacking rooks that can be placed on Q.
+--
+-- Note: This function is provided for completeness as a standalone utility. 
+-- In practice, the same information can be obtained from the last element 
+-- of AllNonAttackingRookConfigurations(Q).
 ---------------------------------------------------------------------------------------------------
-RookNumber=(Q)->(
-    Q=sort(Q);
-    conf={};
-    for i from 0 to #Q-1 do(
-        conf=join(conf,{{Q#i}});
-    );
-    jet=1;
-    while jet>0 do(
-        out={};
-        for l from 0 to #conf-1 do(
-            N=conf#l;
-            for i from 0 to #Q-1 do (
-                t:=0;
-                tag:=0;
-                while (tag==0 and t<jet) do(
-                    if not(isNonAttackingRooks(Q#i,N#t,Q)) then tag=1 else t=t+1;
-                );
-                if t==jet then( 
-                    FF=sort(join(N,{Q#i}));         
-                    out=join(out,{FF});
-                    out=toList(set(out));
-                );
-            );
-        );   
-        if out=={} then return jet;
-        jet=jet+1;
-        conf=out;   
-    );
-);            
-  
+RookNumber = (Q) -> (
+    return #(AllNonAttackingRookConfigurations(Q));
+);
 
 ---------------------------------------------------------------------------------------------------
 -- SwitchOperation(A,B,Q)
@@ -262,17 +236,21 @@ if #diff1 == #diff2 and #diff2 == 2 then (
 );
 
 ---------------------------------------------------------------------------------------------------
--- kCoefficientSwitchingRook(Q,k)
+-- CoeffSwitchingRookPolynomial(Q)
 --
--- Compute the k-th coefficient of the switching rook polynomial of Q.
--- This is the number of connected components in the switching graph 
--- of k-rook configurations.
+-- Compute the list in increasing order of the coefficients of the switching rook polynomial of Q,
+-- as the list of coefficients {1, c1, c2, ...}.
 --
 -- Important Note, before using: loadPackage "Graphs"
 ---------------------------------------------------------------------------------------------------
-kCoefficientSwitchingRook = (Q,k) -> (
+CoeffSwitchingRookPolynomial = (Q) -> (
 
-    kRookSet := kRookConfigurations(Q,k);
+    RookConf := AllNonAttackingRookConfigurations(Q); 
+    rookNumber := #RookConf;
+    coeffRookPol := {1};
+
+    for k from 0 to rookNumber-1 do(
+    kRookSet := RookConf#k;
     verticesForGraph := new MutableHashTable;
     for i from 0 to #kRookSet-1 do verticesForGraph#i = kRookSet#i;
     edgesForGraph = {};
@@ -285,27 +263,10 @@ kCoefficientSwitchingRook = (Q,k) -> (
      );	
     GraphRook = graph(toList(0 .. #kRookSet-1), edgesForGraph);
     kCoeff = #connectedComponents GraphRook;
-    return kCoeff;
+    coeffRookPol = join(coeffRookPol,{kCoeff});
+    );
+return coeffRookPol;
 );
-
----------------------------------------------------------------------------------------------------
--- CoeffSwitchingRookPolynomial(Q)
---
--- Compute the list in increasing order of the coefficients of the switching rook polynomial of Q,
--- as the list of coefficients {1, c1, c2, ...}.
---
--- Important Note, before using: loadPackage "Graphs"
----------------------------------------------------------------------------------------------------
-CoeffSwitchingRookPolynomial=(Q) ->(
-
-degreeRookPol := RookNumber(Q);
-L := {1};
-for k from 1 to degreeRookPol do (
-	L=join(L,{kCoefficientSwitchingRook(Q,k)});
-);
-return L;
-);
-
 
 ---------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------
@@ -335,7 +296,7 @@ ControlList = {};
 numberCollections = #L;
 
 for i from 0 to #L-1 do(
-	print("Iteration " | toString(i+1) | " over " | toString(numberCollections));
+	if i%250 == 0 then print("Iteration " | toString(i+1) | " over " | toString(numberCollections));
 	R=PolyoRing(L#i);
 	I=PolyoIdeal(L#i);
 	
@@ -359,4 +320,3 @@ if ControlList == {} then print("Conjecture is ok") else return ControlList;
 -- L = value get("weak_polyplets_n4.txt");
 -- TestConj(L);
 ---------------------------------------------------------------------------------------------------
-
