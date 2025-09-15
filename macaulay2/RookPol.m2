@@ -128,27 +128,18 @@ PolyoIdeal=(Q)->(
 ---------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------
--- isInnerInterval(A,B,Q)
---
--- Given two cells A and B in Q, return true if they belong to the same inner interval.
----------------------------------------------------------------------------------------------------
-isInnerInterval=(A,B,Q)->(
-       a:=min{A#0#0,B#0#0};
-       b:=min{A#0#1,B#0#1};
-       c:=max{A#1#0,B#1#0};
-       d:=max{A#1#1,B#1#1};
-       return InnerInterval({a,b},{c,d},Q);
-);
-
----------------------------------------------------------------------------------------------------
 -- isNonAttackingRooks(A,B,Q)
 --
 -- Test if two rooks, identified with cells A and B, are in non-attacking position.
 -- Return true if they do not attack each other in Q, false otherwise.
 ---------------------------------------------------------------------------------------------------
 isNonAttackingRooks=(A,B,Q)->(
+    a:=min{A#0#0,B#0#0};
+    b:=min{A#0#1,B#0#1};
+    c:=max{A#1#0,B#1#0};
+    d:=max{A#1#1,B#1#1};
     if (A#0#0==B#0#0 or A#0#1==B#0#1) then(
-        return not(isInnerInterval(A,B,Q));
+        return not(InnerInterval({a,b},{c,d},Q));
     );
     return true;
 );
