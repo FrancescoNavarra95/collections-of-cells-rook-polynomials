@@ -55,8 +55,8 @@ is encoded as:  Q={{{1,1},{2,2}},{{2,1},{3,2}},{{2,2},{3,3}}}
 
 2. **Prepare the data files**  
    - Inside the main repository, you will also find two archives:  
-       * `Collections_of_cells_up_rank_10.zip`  
-       * `Polyominoes_up_rank_14.zip`  
+       * `Collections_of_cells_up_rank_8.zip`  
+       * `Polyominoes_up_rank_11.zip`  
    - Extract these archives **into the `macaulay2/` directory**.  
    - After extraction, the `.txt` files with the collections will be available in the same folder where `RookPol.m2` is located.
 
