@@ -6,8 +6,8 @@ This folder contains Macaulay2 code for experimenting with the following conject
 2. The Castelnuovo–Mumford regularity of the coordinate ring of Q equals the rook number of Q.
 
 Moreover, two `.zip` archives are provided:  
-- one contains the lists of collections of cells up to rank 10,  
-- the other contains the lists of polyominoes up to rank 14.
+- one contains the lists of collections of cells up to rank 8,  
+- the other contains the lists of polyominoes up to rank 11.
 
 Finally, two .txt files contain the output of the conjecture verification: for collections of cells up to rank 8 and for polyominoes up to rank 11.
 These computations can be reproduced on a standard machine and do not require High Performance Computers.
