@@ -30,8 +30,8 @@ We provide two main directories:
         * compares the two polynomials and records any counterexamples.
 
 Moreover, two `.zip` archives are provided:  
-- one contains the lists of collections of cells up to rank 10,  
-- the other contains the lists of polyominoes up to rank 14.  
+- one contains the lists of collections of cells up to rank 8,  
+- the other contains the lists of polyominoes up to rank 11.  
 These lists are already generated and stored in `.txt` format, ready to use with the Macaulay2 code.
 A collection is represented as a list `Q`, whose elements are the cells, each specified by its diagonal corners. For example:
 ```
