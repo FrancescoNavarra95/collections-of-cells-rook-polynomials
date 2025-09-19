@@ -81,7 +81,5 @@ is encoded as:  Q={{{1,1},{2,2}},{{2,1},{3,2}},{{2,2},{3,3}}}
 
 ---
 
-*Acknowledgements.* The function `PolyoIdeal` is adapted from and openly shared in the Macaulay2 package [PolyominoIdeals.m2](https://www.macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/PolyominoIdeals/html/index.html), authored by C. Cisto, R. Jahangir, and F. Navarra. I am grateful to Carmelo Cisto for kindly sharing some preliminary functions which later allowed to make `AllNonAttackingRookConfigurations(Q)`, which has been incorporated into this project.  
-
 *Acknowledgements.* The function `PolyoIdeal` is adapted from the Macaulay2 package [PolyominoIdeals.m2](https://www.macaulay2.com/doc/Macaulay2/share/doc/Macaulay2/PolyominoIdeals/html/index.html), provided by C. Cisto, R. Jahangir, and me. I also thank Carmelo Cisto for sharing preliminary functions that inspired the development of `AllNonAttackingRookConfigurations(Q)`, later integrated into this project.  
 
