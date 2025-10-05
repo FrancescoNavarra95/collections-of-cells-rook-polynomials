@@ -45,6 +45,10 @@ is encoded as:  Q={{{1,1},{2,2}},{{2,1},{3,2}},{{2,2},{3,3}}}
 ---------------------------------------------------------------------------------------------------
 
 ---------------------------------------------------------------------------------------------------
+
+*ADDITIONAL FILES.* We provide three `.zip` archives — **Collection_of_Cells_Rank9**, **Collection_of_Cells_Rank10**, and **Polyominoes_Rank11** — which contain all the instructions (including the `.m2` and `.slurm` scripts) and the corresponding output folders and log files from the computations performed on the Tosun HPC cluster.
+
+---------------------------------------------------------------------------------------------------
  HOW TO USE
 ---------------------------------------------------------------------------------------------------
 
